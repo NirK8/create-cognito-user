@@ -184,7 +184,8 @@ const createUser = async () => {
     );
     const createdUser = await getUser(userPoolId, newUserEmail);
     console.log("\x1b[32m", "User successfully created!");
-    console.log(createdUser);
+
+    console.log("\x1b[0m", createdUser);
   } else {
     console.log("Operation canceled");
   }
