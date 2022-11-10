@@ -58,7 +58,7 @@ const logUserInput = (userPoolId, username, attributesModifications) => {
     console.log(`${mod.Name} ===> ${mod.Value}`);
   });
   console.log(`User Pool Id: ${userPoolId}`);
-  console.log(`username: ${username}`);
+  console.log(`Username: ${username}`);
 };
 
 const promtUserConfirmation = async () => {
