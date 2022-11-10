@@ -2,7 +2,7 @@
   "name": "create-cognito-user",
   "repository": "https://github.com/NirK8/create-cognito-user.git",
   "type": "module",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "An npx tool for creating new users in a cognito user pool",
   "main": "index.js",
   "bin": {
