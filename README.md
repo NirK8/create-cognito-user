@@ -12,7 +12,7 @@ This will start an interactive session, in which you will be prompted to insert 
 
 <br/>
 
-*Please note!*
+## *Please note!*
 <br/>
 In order for this tool to work, you must first authenticate in your terminal using the aws cli by running the following command:
 
