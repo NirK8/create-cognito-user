@@ -1,7 +1,7 @@
 {
   "name": "@nirk8/create-cognito-user",
   "type": "module",
-  "version": "1.0.68",
+  "version": "1.0.73",
   "description": "An npx tool for creating new users in a cognito user pool",
   "main": "index.js",
   "bin": {
