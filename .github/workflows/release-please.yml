@@ -26,17 +26,19 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{secrets.NIR_GITHUB_ACCESS_TOKEN }}
         if: ${{ steps.release.outputs.release_created }}
-  publish:
-    needs: release-please
-    runs-on: ubuntu-latest
-    steps:
+      - name: set-output
+        id: push-to-github-packages
+        run: echo "success=true" >> $GITHUB_OUTPUT
+        if: ${{ steps.push-to-github-packages.outputs.success }}
       - uses: actions/checkout@v3
-      # Setup .npmrc file to publish to npm
+        id: login
+        # these if statements ensure that a publication only occurs when
+        # a new release is created:
       - uses: actions/setup-node@v3
+        needs: login
         with:
-          node-version: '16.x'
+          node-version: 14
           registry-url: 'https://registry.npmjs.org'
-      - run: npm ci
       - run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN }}
