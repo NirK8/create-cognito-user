@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.68](https://github.com/NirK8/create-cognito-user/compare/v1.0.67...v1.0.68) (2022-11-10)
+
+
+### Bug Fixes
+
+* added line break to the logs ([f98741b](https://github.com/NirK8/create-cognito-user/commit/f98741b63ea6e08f05990f7c3a94c80512c5d272))
+
 ## [1.0.67](https://github.com/NirK8/create-cognito-user/compare/v1.0.66...v1.0.67) (2022-11-10)
 
 
