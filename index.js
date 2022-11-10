@@ -25,7 +25,7 @@ const promtUserPoolAndUsername = async () => {
     },
     {
       name: "username",
-      message: "Username (email address):",
+      message: "Insert the new user's username (email address):",
       default: "",
       validate: (input) => {
         if (!input) return "Username is required!";
