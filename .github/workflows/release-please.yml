@@ -7,32 +7,37 @@ jobs:
   release-please:
     runs-on: ubuntu-latest
     steps:
+      # STEP 1: Opening a PR for a new release
       - uses: google-github-actions/release-please-action@v3
         id: release
         with:
           release-type: node
           package-name: create-cognito-user
       # The logic below handles the npm publication:
+      # STEP 2: Signin in to github
       - uses: actions/checkout@v2
         # these if statements ensure that a publication only occurs when
         # a new release is created:
         if: ${{ steps.release.outputs.release_created }}
+      # STEP 3: Setting up publication to GHPR
       - uses: actions/setup-node@v1
         with:
           node-version: 14
           registry-url: 'https://npm.pkg.github.com/'
         if: ${{ steps.release.outputs.release_created }}
-      - name: Push to GitHub Packages Registery
-        id: push-to-ghpr
+      # STEP 3: Publishing to GHPR
+      - name: Publishing to GHPR
+        id: ghpr
         run: |
           npm publish
-          echo "{package-deployed}={true}" >> $GITHUB_OUTPUT
+          echo "deployed=true" >> $GITHUB_OUTPUT
         env:
           NODE_AUTH_TOKEN: ${{secrets.NIR_GITHUB_ACCESS_TOKEN }}
-        if: ${{ steps.push-to-ghpr.outputs.package-deployed }}
+        if: ${{ steps.release.outputs.release_created }}
       - uses: actions/checkout@v2
         # these if statements ensure that a publication only occurs when
         # a new release is created:
+        if: ${{ steps.ghpr.outputs.deployed }}
       - uses: actions/setup-node@v3
         with:
           node-version: 14
@@ -41,3 +46,4 @@ jobs:
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN }}
+        if: ${{ steps.release.outputs.release_created }}
