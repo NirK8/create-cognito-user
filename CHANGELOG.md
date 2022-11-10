@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.11](https://github.com/NirK8/create-cognito-user/compare/v1.0.1...v1.0.11) (2022-11-10)
+
+
+### Bug Fixes
+
+* change yaml ([d5aadbb](https://github.com/NirK8/create-cognito-user/commit/d5aadbb8dd806ad838f78da63339eb6813966a40))
+
 ## [1.0.1](https://github.com/NirK8/create-cognito-user/compare/v1.0.0...v1.0.1) (2022-11-10)
 
 
