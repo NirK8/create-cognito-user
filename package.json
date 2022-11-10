@@ -1,0 +1,20 @@
+{
+  "name": "create-cognito-user",
+  "type": "module",
+  "version": "1.0.63",
+  "description": "An npx tool for creating new users in a cognito user pool",
+  "main": "index.js",
+  "bin": {
+    "create-cognito-user": "index.js"
+  },
+  "author": "Nir Kahana",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-cognito-identity-provider": "^3.204.0",
+    "inquirer": "^9.1.4",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.9"
+  }
+}
