@@ -21,6 +21,8 @@ jobs:
         with:
           node-version: 14
           registry-url: 'https://npm.pkg.github.com/'
+        if: ${{ steps.release.outputs.release_created }}
+      - name: Push to GitHub Packages Registery
         id: push-to-ghpr
         run: |
           npm publish
