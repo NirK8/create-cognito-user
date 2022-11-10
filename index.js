@@ -65,7 +65,7 @@ const promtUserConfirmation = async () => {
   const { executionConfirmed } = await inquirer.prompt({
     type: "confirm",
     name: "executionConfirmed",
-    message: "Create this user with the inputs above?",
+    message: "Create user with the input above?",
     default: true,
   });
   return executionConfirmed;
