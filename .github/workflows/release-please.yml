@@ -22,7 +22,6 @@ jobs:
           node-version: 14
           registry-url: 'https://npm.pkg.github.com/'
         id: push-to-ghpr
-        if: ${{ steps.release.outputs.release_created }}
         run: |
           npm publish
           echo "{package-deployed}={true}" >> $GITHUB_OUTPUT
