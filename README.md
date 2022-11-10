@@ -16,5 +16,10 @@ This will start an interactive session, in which you will be prompted to insert 
 <br/>
 In order for this tool to work, you must first authenticate in your terminal using the aws cli by running the following command:
 
-
 <pre><code>aws configure</code></pre>
+
+The authenticated user must have permission to execute the following sdk commands: 
+* DescribeUserPoolCommand,
+* AdminCreateUserCommand,
+* AdminGetUserCommand,
+* AdminUpdateUserAttributesCommand
