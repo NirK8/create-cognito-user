@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/NirK8/create-cognito-user/compare/v1.0.0...v1.0.1) (2022-11-10)
+
+
+### Bug Fixes
+
+* changed promt ([a2291d7](https://github.com/NirK8/create-cognito-user/commit/a2291d787009947dd78d64dee29e69d90fd30a46))
+
 ## 1.0.0 (2022-11-10)
 
 
