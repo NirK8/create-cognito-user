@@ -18,7 +18,7 @@ In order for this tool to work, you must first authenticate in your terminal usi
 
 <pre><code>aws configure</code></pre>
 
-The authenticated user must have permission to execute the following sdk commands: 
+The authenticated user must have permission to execute the following SDK commands: 
 * DescribeUserPoolCommand,
 * AdminCreateUserCommand,
 * AdminGetUserCommand,
