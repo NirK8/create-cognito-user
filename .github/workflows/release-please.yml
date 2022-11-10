@@ -23,22 +23,19 @@ jobs:
           registry-url: 'https://npm.pkg.github.com/'
         if: ${{ steps.release.outputs.release_created }}
       - run: npm publish
+        id: push-to-ghpr
         env:
           NODE_AUTH_TOKEN: ${{secrets.NIR_GITHUB_ACCESS_TOKEN }}
-        if: ${{ steps.release.outputs.release_created }}
-      - name: set-output
-        id: push-to-github-packages
-        run: echo "success=true" >> $GITHUB_OUTPUT
-        if: ${{ steps.push-to-github-packages.outputs.success }}
-      - uses: actions/checkout@v3
-        id: login
+        run: echo "{package-deployed}={true}" >> $GITHUB_OUTPUT
+        if: ${{ steps.push-to-ghpr.outputs.package-deployed }}
+      - uses: actions/checkout@v2
         # these if statements ensure that a publication only occurs when
         # a new release is created:
       - uses: actions/setup-node@v3
-          needs: login
         with:
           node-version: 14
           registry-url: 'https://registry.npmjs.org'
+        if: ${{ steps.release.outputs.release_created }}
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN }}
